@@ -9,34 +9,28 @@
     --light-text: #FFFFFF;
     --transition: all 0.3s ease;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Raleway', sans-serif;
     color: var(--dark-text);
     background-color: #FFFFFF;
     line-height: 1.6;
 }
-
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 0.5rem;
 }
-
 a {
     text-decoration: none;
     color: inherit;
 }
-
 ul {
     list-style: none;
 }
-
 /* Button Styles */
 .btn {
     padding: 10px 20px;
@@ -49,25 +43,21 @@ ul {
     font-size: 0.85rem;
     letter-spacing: 0.5px;
 }
-
 .btn-explore, .btn-play {
     background-color: var(--gold);
     color: var(--primary-color);
     padding: 12px 24px;
     font-size: 1rem;
 }
-
 .btn-learn-more {
     background-color: var(--primary-color);
     color: var(--light-text);
     margin-top: 1rem;
 }
-
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 /* Top Bar */
 .top-bar {
     display: flex;
@@ -77,7 +67,6 @@ ul {
     color: var(--light-text);
     padding: 1rem 5%;
 }
-
 .site-logo h1 {
     font-size: 1.8rem;
     background: linear-gradient(45deg, var(--light-text) 30%, var(--gold) 70%);
@@ -85,12 +74,10 @@ ul {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .user-actions {
     display: flex;
     align-items: center;
 }
-
 /* Enhanced Navigation */
 .main-nav {
     background-color: var(--secondary-color);
@@ -99,13 +86,11 @@ ul {
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
 .nav-container {
     display: flex;
     justify-content: center;
     padding: 0 5%;
 }
-
 .main-nav a, .dropdown .dropbtn {
     display: block;
     color: white;
@@ -116,11 +101,6 @@ ul {
     transition: var(--transition);
     border-bottom: 3px solid transparent;
     cursor: pointer;
-}
-
-.main-nav a:hover, .dropdown:hover .dropbtn {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-bottom: 3px solid var(--gold);
 }
 
 .dropdown {
@@ -138,35 +118,98 @@ ul {
     border-radius: 0 0 4px 4px;
 }
 
-.dropdown-content a {
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s; /* Smooth fade-in animation */
+}
+
+
+
+/*Dropdown button_______________________________________________________*/
+/* Dropdown Button Styles */
+/* Navigation Links (Regular Buttons) */
+.main-nav a {
+    display: inline-flex; /* Use flexbox for consistent alignment */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
     color: var(--light-text);
+    text-align: center;
+    padding: 1rem 1.5rem; /* Match padding of dropdown buttons */
+    text-decoration: none;
+    font-weight: 600; /* Ensure consistent font weight */
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif; /* Explicitly set font */
+    height: 100%; /* Ensure full height */
+}
+
+/* Dropdown Buttons */
+.dropbtn {
+    background-color: var(--secondary-color); /* Match the navigation bar background */
+    color: var(--light-text); /* White text */
+    padding: 1rem 1.5rem; /* Match padding of regular buttons */
+    font-weight: 600; /* Ensure consistent font weight */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Pointer cursor */
+    transition: var(--transition); /* Smooth transition */
+    text-align: center; /* Center text */
+    border-bottom: 3px solid transparent; /* Match the nav link style */
+    font-size: inherit; /* Preserve the font size */
+    display: inline-flex; /* Use flexbox for consistent alignment */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    gap: 5px; /* Space between text and icon */
+    font-family: 'Raleway', sans-serif; /* Explicitly set font */
+    height: 100%; /* Ensure full height */
+}
+
+/* Dropdown Button Hover */
+.dropbtn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Match the nav link hover */
+    border-bottom: 3px solid var(--gold); /* Match the nav link hover */
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color); /* Match the navigation bar background */
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: var(--light-text); /* White text */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
-    border-bottom: none;
+    border-bottom: none; /* Remove border */
+    font-family: 'Raleway', sans-serif; /* Explicitly set font */
 }
 
-.dropdown-content a i {
-    margin-right: 8px;
-    width: 16px;
-    text-align: center;
-}
-
+/* Dropdown Link Hover */
 .dropdown-content a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-bottom: none;
+    background-color: rgba(255, 255, 255, 0.1); /* Match the nav link hover */
 }
 
+/* Show Dropdown on Hover */
 .dropdown:hover .dropdown-content {
     display: block;
-    animation: fadeIn 0.3s;
+    animation: fadeIn 0.3s; /* Smooth fade-in animation */
+}
+/*Dropdown button_______________________________________________________*/
+
+.main-nav a, .dropbtn {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.dropbtn i {
-    margin-left: 5px;
-    font-size: 0.8rem;
-}
 
 .main-nav a i {
     margin-right: 6px;
@@ -570,84 +613,66 @@ footer {
     .site-logo h1 {
         font-size: 1.5rem;
     }
-    
     .banner-content h2 {
         font-size: 2.5rem;
     }
-    
     .banner-stats {
         gap: 1.5rem;
     }
-    
     .stat-number {
         font-size: 2rem;
     }
 }
-
 @media screen and (max-width: 768px) {
     .top-bar {
         flex-direction: column;
         gap: 1rem;
     }
-    
     .nav-container {
         flex-wrap: wrap;
     }
-    
     .section-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
     .image-content {
         order: -1;
     }
-    
     .section-grid.reverse .image-content {
         order: -1;
     }
-    
     .banner-content h2 {
         font-size: 2rem;
     }
-    
     .banner-stats {
         flex-direction: column;
         gap: 1rem;
     }
-    
     .banner-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
     .banner {
         height: 700px;
     }
-    
     .trending-topics {
         grid-template-columns: 1fr;
     }
 }
-
 @media screen and (max-width: 576px) {
     .user-actions {
         flex-direction: column;
         gap: 1rem;
     }
-    
     .banner {
         height: 400px;
     }
-    
     .banner-content h2 {
         font-size: 1.8rem;
     }
-    
     .section-container h2 {
         font-size: 2rem;
-    }
-    
+    } 
     .banner-stats {
         display: none;
     }
