@@ -1,0 +1,108 @@
+:root {
+    --primary-color: #003366;
+    --secondary-color: #0055A4;
+    --accent-color: #6C63FF;
+    --gold: #D4AF37;
+    --light-bg: #F5F5F5;
+    --dark-text: #333333;
+    --light-text: #FFFFFF;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: var(--dark-text);
+    background-color: #FFFFFF;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--light-text);
+    text-align: center;
+    margin-bottom: 20px;
+    background: var(--secondary-color);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.top-bar {
+    background: var(--secondary-color);
+    padding: 20px;
+    text-align: center;
+    color: var(--light-text);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-color);
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    background: var(--light-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    z-index: 2;
+    margin-left: 40px;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: var(--gold);
+    color: var(--light-text);
+}
+
+.timeline-item span {
+    font-weight: bold;
+    color: var(--gold);
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.timeline-item p, .timeline-item ul {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.timeline-item ul {
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        margin-left: 20px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+}
